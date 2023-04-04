@@ -1,0 +1,109 @@
+.main_admin {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    padding: 0 12px;
+    padding-bottom: 70px;
+}
+
+.main_admin > div {
+    padding: 7px 0;
+}
+
+.header_cambiar_perfil {
+    padding: 20px;
+}
+
+.header_cambiar_perfil > h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--title_color);
+    flex: 0 0 40%;
+}
+
+.container_perfil {
+    display: flex;
+    justify-content: center;
+}
+
+.container_perfil > div {
+    flex: 0 0 80%;
+}
+
+.formulario {
+    width: 100%;
+    padding: 5px;
+    padding-bottom: 15px;
+    background-color: var(--white);
+    border-radius: 7px;
+    box-shadow: 0 0 25px var(--shadow-blue);
+}
+
+.formBox {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formBox_label {
+    flex: 0 0 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--label_color);
+}
+
+.formBox_input {
+    flex: 0 0 100%;
+    background-color: var(--input_bg);
+    border: 1px solid var(--input_border);
+    padding: 9px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--input_color);
+    font-weight: bold;
+}
+
+.formBox_input::placeholder {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.formBox_input:focus-visible {
+    outline: var(--input_focus) auto 1px;
+}
+
+form > .formBox > .btnSubmit {
+    background-color: var(--btn-submit_bg);
+    width: 50%;
+    padding: 7px 12px;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* .container_perfil input {
+    pointer-events: none;
+} */
+
+form > .formBox > .btnSubmit:hover {
+    background-color: var(--btn-submit_bg-hover);
+}
+
+@media screen and (max-width: 760px) {
+    .main_admin {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .container_perfil {
+        padding-bottom: 50px;
+    }
+}

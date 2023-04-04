@@ -1,0 +1,188 @@
+:root {
+    /* title */
+    --white: #fff;
+    --title_color: #467bdb;
+    --title_span: #898989;
+    /* label */
+    --label_color: #898989;
+    /* input */
+    --input_bg: #e6f0fa;
+    --input_border: #d7eafd;
+    --input_color: #656565;
+    --input_focus: #bdddfd;
+    --input_border-error: #a70202;
+    /* btn submit */
+    --btn-submit_bg: #5988df;
+    --btn-submit_bg-hover: #467bdb;
+
+    /* otros */
+    --shadow-blue: #c2dcf7;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.formBox {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formBox_label {
+    flex: 0 0 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--label_color);
+}
+
+.formBox_input {
+    flex: 0 0 100%;
+    background-color: var(--input_bg);
+    border: 1px solid var(--input_border);
+    padding: 9px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--input_color);
+    font-weight: bold;
+}
+
+.formBox_input::placeholder {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.formBox_input:focus-visible {
+    outline: var(--input_focus) auto 1px;
+}
+
+form > .formBox > .btnSubmit {
+    background-color: var(--btn-submit_bg);
+    width: 50%;
+    padding: 7px 12px;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+form > .formBox > .btnSubmit:hover {
+    background-color: var(--btn-submit_bg-hover);
+}
+
+.formBox:has(.links_submit){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    column-gap: 50px;
+}
+
+.links_submit {
+    color: var(--title_color);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.links_submit:hover {
+    text-decoration: underline;
+}
+
+.formulario {
+    width: 80%;
+    padding: 5px;
+    padding-bottom: 15px;
+    background-color: var(--white);
+    border-radius: 7px;
+    box-shadow: 0 0 25px var(--shadow-blue);
+}
+
+/* Login */
+.loginHeader {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.loginHeader_title {
+    color: var(--title_color);
+    font-size: 3.5rem;
+    font-weight: bolder;
+}
+
+.loginHeader_title > span {
+    color: var(--title_span);
+}
+
+.loginBody {
+    padding: 20px;
+}
+
+.links_login {
+    display: block;
+    margin: auto;
+    width: fit-content;
+    min-width: 225px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 12px 30px;
+    border-radius: 7px;
+    color: var(--white);
+    background-color: var(--btn-submit_bg);
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.links_login:hover {
+    background-color: var(--btn-submit_bg-hover);
+}
+
+@media screen and (max-width: 1024px){
+    .mainContainer {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .loginHeader_title {
+        flex: 0 0 90%;
+        font-size: 2.8rem;
+    }
+
+    .formBox_input {
+        flex: 0 0 100%;
+    }
+
+    form > .formBox > .btnSubmit {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .loginHeader {
+        padding-bottom: 0;
+    }
+
+    .loginHeader_title {
+        font-size: 2rem;
+    }
+
+    .loginBody  {
+        padding-top: 0;
+    }
+
+    .links_submit {
+        flex: 0 0 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

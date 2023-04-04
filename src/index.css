@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #e6f0fa;
+}
+
+:focus-visible {
+    outline: none;
+}
+
+[type="submit"] {
+    cursor: pointer;
+}
+
+html::-webkit-scrollbar{
+    width: 8px !important;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 25px;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #6896ec;
+    border-radius: 25px;
+}
+
+/* Error formulario */
+
+.errorSubmit input:not([placeholder="Ingreso principal"], #fecha, [name="main_ingreso"], [type="submit"]),
+.errorSubmit select {
+    border: 1px solid #a70202 !important;
+}
+
+.errorSubmitPassword input[type="password"],
+.errorSubmitPasswordLength input[name="password_nuevo"] {
+    border: 1px solid #a70202 !important;
+}
+
+.overlay-alerta {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #00000030;
+}
+
+.alerta-eliminar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: #f9f9f9;
+    border-radius: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+
+h2.alerta-eliminar-title {
+    flex: 0 0 100%;
+    padding: 7px 20px;
+    background: #f35252;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+p.alerta-eliminar-mensaje {
+    padding: 7px 20px;
+    flex: 0 0 100%;
+}
+
+.alerta-eliminar-mensaje > span {
+    font-weight: bold;
+}
+
+span.alerta-mensaje-tipo_ingreso {
+    color: #a2d7a2;
+}
+
+span.alerta-mensaje-tipo_gasto {
+    color: #f4aeae;
+}
+
+.alerta-eliminar > button {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    display: block;
+    width: 100px;
+    padding: 3px 12px 5px;
+    border-radius: 7px;
+}
+
+.alerta-eliminar > button.button-eliminar {
+    background-color: #f35252;
+    color: #fff;
+    font-weight: bold;
+}
+
+.alerta-eliminar > button.button-eliminar:hover {
+    background-color: #e93a3a;
+}
+
+.alerta-eliminar > button.button-cancelar {
+    background-color: #cacaca;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.alerta-eliminar > button.button-cancelar:hover {
+    background-color: #a9a9a9;
+}

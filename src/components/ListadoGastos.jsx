@@ -3,14 +3,26 @@ import Gasto from "./Gasto";
 
 // Style
 import styles from "../assets/style/componentes.module.css"
+import { useState, useEffect } from "react";
 
 const ListadoGastos = () => {
     const { gastos } = useGastos();
+    const [ newGasto, setNewGasto ] = useState(false)
+
+    useEffect(() => {
+        const readGastos = async () => {
+            if( await gastos.length > 0) {
+                setNewGasto(true)
+            }
+        }
+
+        readGastos()
+    }, [gastos])
 
     return (
         <>              
             <h2 className={styles.listado_header}>Últimos gastos</h2>
-            {gastos.length ? 
+            {newGasto ? 
                 (gastos.map( (gasto) => (
                     <Gasto 
                         key={gasto._id}

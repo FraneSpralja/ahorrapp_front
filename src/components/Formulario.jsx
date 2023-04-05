@@ -50,10 +50,6 @@ const Formulario = () => {
             fecha,
             id: gastoId
         })
-
-        setTimeout(() => {
-            location.reload();
-        }, 1000)
     }
 
     useEffect(() => {

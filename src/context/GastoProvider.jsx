@@ -70,7 +70,8 @@ export const GastoProvider = ({ children }) => {
                     config
                 );
     
-                setGastos([data, ...gastos]);
+                const { createdAt, updateAt, _v, ...gastoAlmacenado } = data;
+                setGastos([gastoAlmacenado.gastoGuardado, ...gastos]);
             } catch (error) {
                 console.log(error)
             }

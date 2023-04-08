@@ -6,6 +6,7 @@ import useAuth from '../hooks/useAuth';
 import styles from "../assets/style/componentes.module.css"
 
 const Header = () => {
+    const { cerrarSesion } = useAuth();
     const [ burger, setBurgerMenu ] = useState(false)
     const [toggleMenu, setToggleMenu] = useState(true);
 
@@ -27,15 +28,13 @@ const Header = () => {
         });
         handleBurguerMenu()
     }, [])
-
-    const { cerrarSesion } = useAuth();
+    
 
     return (
         <header className={styles.header}>
             <div className={styles.header_container}>
                 <h1>
-                    <span>Ahorrap -</span> {''} 
-                    Inicio
+                    <span>Ahorrapp</span>
                 </h1>
                 {
                     !burger ?

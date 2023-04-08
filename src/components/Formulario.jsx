@@ -50,6 +50,13 @@ const Formulario = () => {
             fecha,
             id: gastoId
         })
+
+        setNombre('')
+        setTipo('')
+        setMonto('')
+        setEtiqueta('')
+        setFecha('')
+        setMostrarFormulario(false)
     }
 
     useEffect(() => {

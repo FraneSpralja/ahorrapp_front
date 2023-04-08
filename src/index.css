@@ -120,3 +120,9 @@ span.alerta-mensaje-tipo_gasto {
 .alerta-eliminar > button.button-cancelar:hover {
     background-color: #a9a9a9;
 }
+
+@media screen and (max-width: 760px) {
+    .alerta-eliminar {
+        width: 90%;
+    }
+}

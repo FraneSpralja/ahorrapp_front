@@ -1,7 +1,7 @@
 .main_admin {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     padding: 0 12px;
     padding-bottom: 70px;
 }
@@ -89,6 +89,15 @@ form > .formBox > .btnSubmit {
     margin-top: 20px;
 }
 
+.resumen_admin {
+    flex: 0 0 100%;
+}
+
+.formulario_admin,
+.lista_admin {
+    flex: 0 0 50%;
+}
+
 /* .container_perfil input {
     pointer-events: none;
 } */
@@ -99,8 +108,7 @@ form > .formBox > .btnSubmit:hover {
 
 @media screen and (max-width: 760px) {
     .main_admin {
-        display: grid;
-        grid-template-columns: 100%;
+        flex-flow: column;
     }
 
     .container_perfil {

@@ -7,7 +7,7 @@ import styles from "../assets/style/componentes.module.css"
 
 const ResumenMontos = () => {
     const { gastos } = useGastos();
-    const { auth } = useAuth();
+    const { auth, mainIngreso } = useAuth();
 
     const { main_ingreso } = auth;
 
@@ -53,9 +53,9 @@ const ResumenMontos = () => {
     }, [gastos])
     
     useEffect(() => {
-        setIngresoPrincipal(Number(main_ingreso))
+        setIngresoPrincipal(mainIngreso)
 
-    }, [auth])
+    }, [mainIngreso])
 
     return (
         <>

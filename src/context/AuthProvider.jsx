@@ -10,6 +10,7 @@ const AuthProvider = (props) => {
 
     const [ cargando, setCargando ] = useState(true); 
     const [ auth, setAuth ] = useState({});
+    const [ mainIngreso, setMainIngreso ] = useState("")
 
     useEffect(() => {
         const autenticarUser = async() => {
@@ -31,6 +32,7 @@ const AuthProvider = (props) => {
                 const { data } = await clienteAxios('/user/perfil', config)
 
                 setAuth(data.user)
+                setMainIngreso(Number(data.user.main_ingreso))
             } catch (error) {
                 console.log(error.response.data.msg)
                 setAuth({});
@@ -66,7 +68,7 @@ const AuthProvider = (props) => {
         try {
             const url = `/user/perfil/${datos._id}`
             const { data } = await clienteAxios.put(url, datos, config);
-            console.log(data)
+            setMainIngreso(Number(data.main_ingreso))
             return {
                 msg: 'Cambios almacenados correctamente'
             }
@@ -117,7 +119,8 @@ const AuthProvider = (props) => {
                 cargando,
                 cerrarSesion,
                 actualizarPerfil,
-                editarPassword
+                editarPassword,
+                mainIngreso
             }}
         >
             { children }

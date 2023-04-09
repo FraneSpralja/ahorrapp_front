@@ -1,10 +1,25 @@
 import useGastos from "../hooks/useGastos";
+import { useEffect, useState } from "react";
 
 // Styles
 import styles from "../assets/style/componentes.module.css"
 
 const Gasto = (gasto) => {
+    const [ fechaNueva, setFechaNueva ] = useState("")
     const monto = gasto.gasto;
+
+    useEffect(() => {
+        const formatearFecha = (fecha) => {
+            let nuevaFecha = new Date(fecha);
+            nuevaFecha.setMinutes(nuevaFecha.getMinutes() + nuevaFecha.getTimezoneOffset())
+            const fechaCorregida = new Intl.DateTimeFormat('es-ES', {dateStyle: 'long'}).format(nuevaFecha);
+
+            setFechaNueva(fechaCorregida)
+            console.log(fechaNueva)
+        }
+
+        formatearFecha(monto.fecha)
+    }, [])
 
     const { setEditar, eliminarGasto } = useGastos()
     return (
@@ -12,7 +27,7 @@ const Gasto = (gasto) => {
             <div className={styles.monto_card}>
                 <div className={styles.monto_card_head}>
                     <h3>{monto.nombre}</h3>
-                    <span><strong>Fecha: </strong> {new Date(monto.fecha).toLocaleDateString()}</span>
+                    <span><strong>Fecha: </strong> {fechaNueva}</span>
                     
                 </div>
                 <div className={styles.monto_card_body}>
